@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "enabled": true,
+  "name": "Ellucian Initialize and Structure Code",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Execute the Ellucian Experience Extension initialization workflow.\n\n**IMPORTANT: Read `.kiro/ellucian-hook-req.md` FIRST — it is the authoritative source of truth for every step, variable, and requirement.**\n\n## Interaction Rules (MUST FOLLOW)\n\n1. **One question at a time.** Use the `user_input` tool to ask each question individually. Never batch multiple questions.\n2. **Provide button options with defaults.** When a question has a recommended answer, include it as an option with `recommended: true`.\n3. **Use generic variable names** as defined in the requirements doc (e.g., `uploadToken`, `cardName`, `cardPublisher`, `cardType`, `cardTitle`, `cardDisplayType`, `cardDescription`, `cardIcon`, `requiresEthosApiKey`).\n4. **Proceed sequentially.** After each answer, move to the next question immediately.\n5. **Handle skips gracefully.** If a field is optional and the user skips it, use empty/null and continue.\n\n## Question Order\n\n1. `uploadToken` — upload token (free text, skippable)\n2. `cardName` — PascalCase card name (no spaces)\n3. `cardPublisher` — publisher (default: `StThomas`)\n4. `cardType` — PascalCase card type (no spaces)\n5. `cardTitle` — user-facing title\n6. `cardDisplayType` — human-readable display type\n7. `cardDescription` — card description\n8. `cardIcon` — icon name from Ellucian Path Iconography, or skip (optional)\n9. `requiresEthosApiKey` — Yes/No (default: No)\n\n## After Collecting All Answers\n\nFollow the execution steps in `.kiro/ellucian-hook-req.md` exactly. The rename to `extension` is a REQUIREMENT — always rename the scaffolded folder to `extension`. Do not ask the user about this.\n\nIf any step fails, report the error and ask the user how to proceed."
+  }
+}
