@@ -125,9 +125,9 @@ In `package.json`, add --env forceUpload to scripts.deploy-dev property
 - Ellucian dependencies can be unpredictable. For SDK v8.1.2 be sure the following dependencies are present:
 ```json
 "dependencies": {
-    "@ellucian/ds-icons": "https://cdn.elluciancloud.com/assets/EDS2/8.4.0/umd/path_design_system_icons.tgz",
+    "@ellucian/ds-icons": "https://cdn.elluciancloud.com/assets/EDS2/8.5.0/umd/path_design_system_icons.tgz",
     "@ellucian/experience-extension-utils": "https://cdn.elluciancloud.com/assets/SDK/utils/1.1.0/ellucian-experience-extension-utils-1.1.0.tgz",
-    "@ellucian/react-design-system": "https://cdn.elluciancloud.com/assets/EDS2/8.4.0/umd/path_design_system.tgz",
+    "@ellucian/react-design-system": "https://cdn.elluciancloud.com/assets/EDS2/8.5.0/umd/path_design_system.tgz",
     "@ellucian/experience-extension-extras": "github:ellucian-developer/experience-extension-extras#8.1.0",
     "react": "19.0.3",
     "react-dom": "19.0.3",
