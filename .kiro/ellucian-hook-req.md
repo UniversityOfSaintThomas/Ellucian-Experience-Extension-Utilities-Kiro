@@ -128,7 +128,7 @@ In `package.json`, add --env forceUpload to scripts.deploy-dev property
     "@ellucian/ds-icons": "https://cdn.elluciancloud.com/assets/EDS2/8.4.0/umd/path_design_system_icons.tgz",
     "@ellucian/experience-extension-utils": "https://cdn.elluciancloud.com/assets/SDK/utils/1.1.0/ellucian-experience-extension-utils-1.1.0.tgz",
     "@ellucian/react-design-system": "https://cdn.elluciancloud.com/assets/EDS2/8.4.0/umd/path_design_system.tgz",
-    "@ellucian/experience-extension-extras": "github:ellucian-developer/experience-extension-extras",
+    "@ellucian/experience-extension-extras": "github:ellucian-developer/experience-extension-extras#8.1.0",
     "react": "19.0.3",
     "react-dom": "19.0.3",
     "react-intl": "7.1.11",
@@ -138,6 +138,40 @@ In `package.json`, add --env forceUpload to scripts.deploy-dev property
 .nvmrc
 We don't care about the specific minor and patch version, so just give it a nice Major version by removing the dotted numbers after the first number.
 For example, `24.18.1` becomes `24`
+
+### Fix .babelrc
+After the project is initialized, there will be a `.babelrc` file in the `extension` directory. Add `@babel/plugin-transform-class-properties` to the `plugins` array so it looks like:
+
+```json
+"plugins": [
+  "@babel/plugin-transform-class-properties",
+  "@babel/plugin-transform-runtime"
+],
+```
+
+### Fix ESLint Config
+After the project is initialized, there will be an `eslint.config.mjs` file in the `extension` directory. Update the `globals` section so it uses the spread of `globals.browser` instead of individual browser globals. 
+
+Replace:
+```js
+globals: {
+  window: 'readonly',
+  document: 'readonly',
+  navigator: 'readonly',
+  process: 'readonly',
+  console: 'readonly',
+}
+```
+
+With:
+```js
+globals: {
+  ...globals.browser,
+  process: 'readonly',
+}
+```
+
+Make sure `globals` is imported from the `globals` package at the top of the file (e.g., `import globals from 'globals'`). This package should already be a dev dependency.
 
 ### Install Packages
 cd into the extension directory and run the install command.
