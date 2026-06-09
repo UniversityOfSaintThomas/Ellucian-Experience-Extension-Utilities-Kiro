@@ -51,7 +51,7 @@ Execute hook: Ellucian Initialize and Structure Code.
 
 Alternatively you can:
 1. Click the **Kiro** icon on the left sidebar.
-2. Under **Agent Hooks**, click "Add a hook" and select **"Manually create a hook"**.
+2. Under **Agent Hooks**, look for the `Ellucian Initialize and Structure Code` hook.
 3. Click on the play button next to `Ellucian Initialize and Structure Code` to run the hook
 
 > Follow the execution and provide relevant information when prompted.
