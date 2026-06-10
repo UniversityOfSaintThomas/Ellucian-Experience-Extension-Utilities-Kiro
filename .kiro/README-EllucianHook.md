@@ -25,7 +25,7 @@ Additionally, be sure to use the Kiro IDE for this set up.
 
 ## Step 2: Download the `.kiro` Directory
 
-Download the `.kiro` directory into your Ellucian project folder by running this commmand:
+Download the `.kiro` directory into your Ellucian project folder by running this command:
 
 ```
 curl -L https://github.com/UniversityOfSaintThomas/Ellucian-Experience-Extension-Utilities-Kiro/archive/refs/heads/main.zip -o repo.zip && unzip repo.zip && cp -a Ellucian-Experience-Extension-Utilities-Kiro-main/. . && rm -rf Ellucian-Experience-Extension-Utilities-Kiro-main repo.zip
