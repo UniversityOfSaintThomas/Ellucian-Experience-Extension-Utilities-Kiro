@@ -19,7 +19,9 @@ I need a hook that will execute the following:
 6. **cardDisplayType** — Ask for the display card type (human-readable). No default.
 7. **cardDescription** — Ask for a description of the card. No default.
 8. **cardIcon** — Ask for the mini card icon (from Ellucian Path Iconography). Provide option to skip (optional field).
-9. **requiresEthosApiKey** — Ask if the project requires an Ethos API Key. Default/recommended: `Yes`. Provide Yes/No buttons.
+9. **requiresEthosApiKey** — Ask if the project requires an Ethos API Key. 
+   Provide Yes/No buttons: Yes (RECOMMENDED DEFAULT), No.
+   ALWAYS mark Yes as `recommended: true`.
 
 ---
 
